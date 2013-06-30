@@ -1,0 +1,82 @@
+USER       PID %CPU %MEM   VSZ  RSS TTY      STAT START   TIME COMMAND
+root         1  0.0  0.0  1492  508 ?        S    Apr19   0:04 init [2]       
+root         2  0.0  0.0     0    0 ?        S    Apr19   0:00 [keventd]
+root         3  0.0  0.0     0    0 ?        SN   Apr19   0:00 [ksoftirqd_CPU0]
+root         4  0.0  0.0     0    0 ?        S    Apr19   0:00 [kswapd]
+root         5  0.0  0.0     0    0 ?        S    Apr19   0:00 [bdflush]
+root         6  0.0  0.0     0    0 ?        S    Apr19   0:00 [kupdated]
+root        11  0.0  0.0     0    0 ?        S    Apr19   0:00 [khubd]
+root        16  0.0  0.0     0    0 ?        S    Apr19   0:03 [kjournald]
+daemon     281  0.0  0.1  1612  544 ?        Ss   Apr19   0:01 /sbin/portmap
+root       287  0.0  0.0     0    0 ?        S    Apr19   0:00 [rpciod]
+root       288  0.0  0.0     0    0 ?        S    Apr19   0:00 [lockd]
+root       394  0.0  0.1  2240  824 ?        Ss   Apr19   0:00 /sbin/syslogd
+root       397  0.0  0.2  2300 1412 ?        Ss   Apr19   0:00 /sbin/klogd
+root       412  0.0  0.1  6268  828 ?        S    Apr19   0:00 /usr/sbin/ypbind
+root       413  0.0  0.1  6268  828 ?        S    Apr19   0:00 /usr/sbin/ypbind
+root       414  0.0  0.1  6268  828 ?        S    Apr19   0:00 /usr/sbin/ypbind
+root       415  0.0  0.1  6268  828 ?        S    Apr19   0:00 /usr/sbin/ypbind
+drozas     450  0.0  0.3  2980 1612 ?        Ss   Apr19   0:24 /usr/sbin/famd -T 0
+root       456  0.0  0.1  2220  736 ?        Ss   Apr19   0:00 /usr/sbin/inetd
+root       473  0.0  0.2  3388 1424 ?        Ss   Apr19   0:00 /usr/sbin/sshd
+root       481  0.0  0.8  5364 4128 ?        Ss   Apr19   0:00 /usr/bin/X11/xfs -daemon
+root       555  0.0  0.2  2716 1460 ?        S    Apr19   0:00 /bin/bash /etc/rc2.d/S20xprint posix_sh_forced start
+root       556  0.0  0.2  2716 1460 ?        S    Apr19   0:00 /bin/bash /etc/rc2.d/S20xprint posix_sh_forced start
+root       557  0.0  0.2  2716 1464 ?        S    Apr19   0:00 /bin/bash /etc/rc2.d/S20xprint posix_sh_forced start
+root       558  0.0  0.6  9428 3120 ?        S    Apr19   0:00 /usr/bin/Xprt -ac -pn -nolisten tcp -audit 4 -fp /usr/X11R6/lib/X11/fonts/Type1,/usr/lib/X11/fonts/Type1,/var/lib/defoma/x-ttcidfont-conf.d/dirs/TrueType,/usr/X11R6/lib/X11/fonts/100dpi,/usr/X11R6/lib/X11/fonts/75dpi,/usr/X11R6/lib/X11/fonts/misc,/usr/lib/X11/fonts/100dpi,/usr/lib/X11/fonts/100dpi/,/usr/lib/X11/fonts/75dpi,/usr/lib/X11/fonts/75dpi/,/usr/lib/X11/fonts/misc :64
+root       567  0.0  0.1  2368  932 ?        Ss   Apr19   0:00 /sbin/rpc.statd
+daemon     579  0.0  0.1  1672  624 ?        Ss   Apr19   0:00 /usr/sbin/atd
+root       585  0.0  0.1  1748  712 ?        Ss   Apr19   0:00 /usr/sbin/cron
+root       622  0.0  0.4  9320 2368 ?        Ss   Apr19   0:00 /usr/bin/gdm
+root       629  0.0  0.6  9896 3264 ?        S    Apr19   0:00 /usr/bin/gdm
+root       630  0.0  6.3 116940 32928 ?      S<   Apr19   4:07 /usr/X11R6/bin/X :0 -audit 0 -auth /var/lib/gdm/:0.Xauth vt7
+root       632  0.0  0.0  1484  476 tty1     Ss+  Apr19   0:00 /sbin/getty 38400 tty1
+root       633  0.0  0.0  1484  476 tty2     Ss+  Apr19   0:00 /sbin/getty 38400 tty2
+root       634  0.0  0.0  1484  476 tty3     Ss+  Apr19   0:00 /sbin/getty 38400 tty3
+root       635  0.0  0.0  1484  476 tty4     Ss+  Apr19   0:00 /sbin/getty 38400 tty4
+root       636  0.0  0.0  1484  476 tty5     Ss+  Apr19   0:00 /sbin/getty 38400 tty5
+root       637  0.0  0.0  1484  476 tty6     Ss+  Apr19   0:00 /sbin/getty 38400 tty6
+lp       16735  0.0  0.1  2452  860 ?        Ss   Apr24   0:00 /usr/sbin/lpd -s
+root     16737  0.0  0.1  2452  900 ?        S    Apr24   0:00 /usr/sbin/lpd -s
+drozas   29865  0.0  2.0 18244 10784 ?       Ss   13:20   0:01 x-session-manager
+drozas   29925  0.0  0.1  2980  880 ?        Ss   13:20   0:00 /usr/bin/ssh-agent x-session-manager
+drozas   29927  0.0  1.5 10172 8208 ?        S    13:20   0:01 /usr/lib/gconf2/gconfd-2 5
+drozas   29930  0.0  0.2  2240 1068 ?        S    13:20   0:00 /usr/bin/gnome-keyring-daemon
+drozas   29932  0.0  0.5  5904 3028 ?        Ss   13:20   0:00 /usr/lib/bonobo-activation/bonobo-activation-server --ac-activate --ior-output-fd=18
+drozas   29934  0.0  0.5  7992 2728 ?        Ss   13:20   0:00 gnome-smproxy --sm-client-id default0
+drozas   29936  0.0  1.8 20284 9272 ?        S    13:20   0:00 /usr/lib/control-center/gnome-settings-daemon --oaf-activate-iid=OAFIID:GNOME_SettingsDaemon --oaf-ior-fd=22
+drozas   29946  0.0  0.4  3792 2092 ?        S    13:20   0:00 xscreensaver -nosplash
+drozas   29970  0.0  1.5 12868 7960 ?        Ss   13:20   0:06 /usr/bin/metacity --sm-client-id=default1
+drozas   29978  0.0  2.4 20552 12788 ?       Ss   13:20   0:02 gnome-panel --sm-client-id default2
+drozas   29980  0.0  4.3 33192 22196 ?       Ss   13:20   0:07 nautilus --no-default-window --sm-client-id default3
+drozas   29984  0.1  1.2 15220 6376 ?        Ss   13:20   0:23 magicdev --sm-client-id default6
+drozas   29991  0.0  4.3 33192 22196 ?       S    13:20   0:00 nautilus --no-default-window --sm-client-id default3
+drozas   29992  0.0  4.3 33192 22196 ?       S    13:20   0:00 nautilus --no-default-window --sm-client-id default3
+drozas   29994  0.0  0.7 10760 3996 ?        S    13:20   0:00 /usr/lib/gnome-vfs2/gnome-vfs-daemon --oaf-activate-iid=OAFIID:GNOME_VFS_Daemon_Factory --oaf-ior-fd=30
+drozas   29995  0.0  0.7 10760 3996 ?        S    13:20   0:00 /usr/lib/gnome-vfs2/gnome-vfs-daemon --oaf-activate-iid=OAFIID:GNOME_VFS_Daemon_Factory --oaf-ior-fd=30
+drozas   29996  0.0  0.7 10760 3996 ?        S    13:20   0:00 /usr/lib/gnome-vfs2/gnome-vfs-daemon --oaf-activate-iid=OAFIID:GNOME_VFS_Daemon_Factory --oaf-ior-fd=30
+drozas   30013  0.0  4.3 33192 22196 ?       S    13:20   0:00 nautilus --no-default-window --sm-client-id default3
+drozas   30014  0.0  4.3 33192 22196 ?       S    13:20   0:00 nautilus --no-default-window --sm-client-id default3
+drozas   30015  0.0  4.3 33192 22196 ?       S    13:20   0:00 nautilus --no-default-window --sm-client-id default3
+drozas   30017  0.0  0.1  2176  800 ?        S    13:20   0:00 /usr/lib/nautilus-cd-burner/mapping-daemon
+drozas   30019  0.0  1.7 16664 8988 ?        S    13:20   0:00 /usr/lib/gnome-applets/multiload-applet-2 --oaf-activate-iid=OAFIID:GNOME_MultiLoadApplet_Factory --oaf-ior-fd=32
+drozas   30021  0.0  1.9 17896 10264 ?       S    13:20   0:13 /usr/lib/gnome-panel/wnck-applet --oaf-activate-iid=OAFIID:GNOME_Wncklet_Factory --oaf-ior-fd=34
+drozas   30023  0.0  1.7 16576 8944 ?        S    13:20   0:00 /usr/lib/gnome-panel/clock-applet --oaf-activate-iid=OAFIID:GNOME_ClockApplet_Factory --oaf-ior-fd=36
+drozas   30026  0.0  0.2  2924 1316 ?        S    13:21   0:00 /bin/sh /home/al-03-04/drozas/Desktop/firefox
+drozas   30045  0.0  0.2  2960 1340 ?        S    13:21   0:00 /bin/sh /home/al-03-04/drozas/firefox/firefox-installer/run-mozilla.sh /home/al-03-04/drozas/firefox/firefox-installer/firefox-bin
+drozas   30050  0.4  8.6 62984 44600 ?       S    13:21   1:11 /home/al-03-04/drozas/firefox/firefox-installer/firefox-bin
+drozas   30051  0.0  8.6 62984 44600 ?       S    13:21   0:00 /home/al-03-04/drozas/firefox/firefox-installer/firefox-bin
+drozas   30052  0.0  8.6 62984 44600 ?       S    13:21   0:07 /home/al-03-04/drozas/firefox/firefox-installer/firefox-bin
+drozas   30054  0.0  8.6 62984 44600 ?       S    13:21   0:00 /home/al-03-04/drozas/firefox/firefox-installer/firefox-bin
+drozas   30294  0.0  0.3  4360 1888 ?        S    13:47   0:00 ./server 127.0.0.1 5001
+drozas   30296  0.0  0.3  4360 1888 ?        S    13:47   0:00 ./server 127.0.0.1 5001
+drozas   30325  0.0  1.7 19212 8964 ?        S    13:59   0:00 /usr/lib/nautilus/nautilus-throbber --oaf-activate-iid=OAFIID:Nautilus_Throbber_Factory --oaf-ior-fd=26
+drozas   30329  0.2  3.3 29840 17236 ?       S    14:00   0:31 gnome-terminal
+drozas   30330  0.0  0.1  2196  724 ?        S    14:00   0:00 gnome-pty-helper
+drozas   30331  0.0  0.3  3228 1732 pts/0    Ss+  14:00   0:00 bash
+drozas   30332  0.0  3.3 29840 17236 ?       S    14:00   0:00 gnome-terminal
+drozas   30333  0.0  3.3 29840 17236 ?       S    14:00   0:00 gnome-terminal
+drozas   30538  0.4  2.6 21680 13892 ?       S    15:37   0:31 /usr/bin/xemacs21-nomule
+drozas   30550  0.0  0.3  3212 1688 pts/1    Ss+  15:41   0:00 bash
+drozas   30561  0.0  0.3  3236 1752 pts/2    Ss   15:41   0:00 bash
+drozas   31437  1.0  0.1  2484  916 pts/2    R+   17:33   0:00 ps -aux

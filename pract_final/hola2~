@@ -1,0 +1,16 @@
+POST /cgi-bin/post_form.cgi HTTP/1.0(CR)(LF)
+Content-Length: 5(CR)(LF)
+(CR)(LF)
+Analyzing first line POST /cgi-bin/post_form.cgi HTTP/1.0
+Analyzing field Content-Length: 5
+Llamada a Analyze_Petition
+Peticion de tipo HTTP 1.0
+Atendiendo el POST de 1.0...
+RUTA ANTES DE ENTRAR AL TRAT POST: webdocs//cgi-bin/post_form.cgi
+RUTA AL ENTRAR AL TRAT POST: webdocs//cgi-bin/post_form.cgi
+Vamos a ejecutar el archivo...
+CONTENIDO DE Peticion.Pet_Body antes del  if : 
+VALOR DEL RESTO A LEER en cadena:5
+VALOR DEL RESTO A LEER en int: 5
+CONTENIDO DE Peticion.Pet_Body en el if : op1=a
+Contenido de respuesta despues de concatenar cabecera : HTTP/1.0 200 OK

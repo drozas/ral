@@ -1,0 +1,72 @@
+## Fichero con la batería de peticiones-respuesta.
+## Una petición-respuesta contiene:
+##   - Petición, linea que comienza por 'P:' (obligatoria)
+##   - Cabeceras, líneas que comienzan por 'C:' (opcionales)
+##   -Cuerpo, empieza con la línea 'B:num' , donde num es el tamaño
+##   del cuerpo de la petición. Los siguientes num caracteres serán
+##   leídos y tomados como parte del cuerpo de la petición. (opcional)
+##   - Respuesta, línea que comienza por 'R:'. Es la respuesta esperada
+##   para esa petición (obligatoria).
+## Las líneas en blanco son ignoradas, los comentarios han de ponerse en
+## líneas que comiencen por '##'.
+## No hay pruebas para la multitarea.
+## Pasa las peticiones PUT, hay que comprobar los contenidos dejados en los ficheros
+## guardados.
+
+## ATENCIÓN!!!
+## Para poder pasar estas pruebas, suponemos que el servidor sirve dos dominios
+## (especificados ambos en server_config/local_domains), que son:
+## www.localdomain.org
+## www.localdomain2.org
+## 
+## Al ser www.localdomain.org el primero, es el dominio por defecto. Este dominio
+## contendrá dos ficheros:
+## default (que sólo contendrá el texto 'hola que tal')
+## form.hmtl (el formulario para acceder al .cgi de la práctica 5)
+## En www.localdomain2.org habrá un solo un fichero:
+## default2 (que sólo contendrá 'este es el contenido de www.localdomain2.org/default2')
+##
+
+## cgi-bin, POST
+## 23 **** Verificación de POST (cojo el formulario, aunque no es necesario)
+##P:GET /form.html HTTP/1.0
+##C:Host: www.localdomain.org
+##R:HTTP/1.0 200 OK
+## 24 **** Segunda etapa, llamada a POST
+P:POST http://www.localdomain.org/cgi-bin/post_form.cgi HTTP/1.0
+C:Host: www.localdomain.org
+C:Connection: Close
+C:Content-Length: 17
+B:17
+op1=1&op2=2&op3=3
+R:HTTP/1.0 200 OK
+## 25 **** POST sin acudir al dir /cgi-bin
+P:POST http://www.localdomain.org/post_form.cgi HTTP/1.0
+C:Host: www.localdomain.org
+C:Content-Length: 17
+B:17
+op1=1&op2=2&op3=3
+R:HTTP/1.0 403 Forbidden
+## cgi-bin, POST
+## 23 **** Verificación de POST (cojo el formulario, aunque no es necesario)
+P:GET /form.html HTTP/1.1
+C:Host: www.localdomain.org
+KEEP-CONNECTED
+R:HTTP/1.1 200 OK
+## 24 **** Segunda etapa, llamada a POST
+P:POST http://www.localdomain.org/cgi-bin/post_form.cgi HTTP/1.1
+C:Host: www.localdomain.org
+C:Connection: Close
+C:Content-Length: 17
+B:17
+op1=1&op2=2&op3=3
+R:HTTP/1.1 200 OK
+## 25 **** POST sin acudir al dir /cgi-bin
+P:POST http://www.localdomain.org/post_form.cgi HTTP/1.1
+C:Host: www.localdomain.org
+C:Content-Length: 17
+B:17
+op1=1&op2=2&op3=3
+KEEP-CONNECTED
+R:HTTP/1.1 403 Forbidden
+

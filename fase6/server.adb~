@@ -1,0 +1,76 @@
+-- PRÁCTICA RAL: Servidor HTTP
+-- David Rozas
+
+with Lower_Layer_TCP;
+with Ada.Command_Line;
+with Ada.Text_IO;
+with Ada.IO_Exceptions;
+--with Petition_Analysis; use Petition_Analysis;
+--with Http_10; use http_10;
+--with http_common; use http_common;
+with Ada.Strings.Unbounded;
+--with Uri_Analysis; use Uri_Analysis;
+--with configuracion_server; use configuracion_server;
+--with Http_11; use Http_11;
+with Tarea_Conexion;
+
+
+procedure server is
+
+   package TCP renames Lower_Layer_TCP;
+   package ASU renames ada.strings.unbounded;
+   use type ASU.Unbounded_String;
+
+
+   Usage_Error: exception;
+   Serv_EP: TCP.End_Point;
+   --Serv_Conn: aliased TCP.Connection;
+
+
+   NHijos:  Natural:=1;
+   Hijo: Tarea_Conexion.PHijo;
+   DatosTarea: Tarea_Conexion.PInfoTarea;
+
+
+begin
+   --  Controlamos que sea correcto el nº de argumentos
+   if Ada.Command_Line.Argument_Count /= 2 then
+      raise Usage_Error;
+   end if;
+
+   -- Creacion de end point, y puesta a escucha
+   Serv_EP := TCP.Build (Ada.Command_Line.Argument (1),
+                         Integer'Value (Ada.Command_Line.Argument (2)));
+   TCP.Listen_Connection (Serv_EP);
+   -- Además, cargamos la configuracion del servidor...
+   loop
+
+      --Creamos un nuevo registro
+      DatosTarea := new Tarea_Conexion.InfoTarea;
+      -- Esperamos a que nos hagan conexiones
+      Ada.Text_IO.Put_Line ("Esperando a recibir conexiones...");
+      TCP.Wait_Connection (Serv_EP, DatosTarea.Conexion);
+      Ada.Text_Io.Put_Line("");
+      Ada.Text_Io.Put_Line("");
+      Ada.Text_Io.Put_Line("");
+      Ada.Text_Io.Put_Line("");
+      Ada.Text_Io.Put_Line("@@@@@@@@@@@@@@@@@@@@@@@@@@ Inicio de conexion @@@@@@@@@@@@@@@@@@@@@@@@@@");
+
+      --LLAMADA A NUEVA_CONEXION
+      Ada.Text_Io.Put_Line("Creando el HIJO Nº : " & Natural'Image(NHijos));
+      NHijos:=NHijos+1;
+      --Y una nueva tarea
+      Hijo := new Tarea_Conexion.NuevaConexion(DatosTarea);
+
+   end loop;
+
+exception
+   when Ada.IO_Exceptions.End_Error =>
+      TCP.Dispose (DatosTarea.Conexion);
+      Ada.Text_Io.Put_Line("@@@@@@@@@@@@@@@@@@@@@@@@@@ Cierre de conexion @@@@@@@@@@@@@@@@@@@@@@@@@@");
+      Ada.Text_IO.Put ("El cliente ha cerrado la conexión...");
+      Ada.Text_IO.New_Line;
+   when Usage_Error =>
+      Ada.Text_IO.Put_Line ("Dos argumentos necesarios: host y port");
+
+end server;
